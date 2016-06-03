@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        release {
+        }
+    }
+    lintOptions {
+        // F-droid build requires this
+        checkReleaseBuilds false
+        abortOnError false
+        disable 'InvalidPackage'
+    }
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+    defaultConfig {
+        applicationId "com.mikifus.padland"
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionName '1.1'
+        multiDexEnabled true
+//        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        debug {
+            pseudoLocalesEnabled true
+            minifyEnabled false
+            buildConfigField "Boolean", "DEBUG_MODE", "true"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            buildConfigField "Boolean", "DEBUG_MODE", "false"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:design:23.3.0'
+    compile 'com.pnikosis:materialish-progress:1.5'
+    //    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
+}

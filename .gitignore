@@ -1,40 +1,8 @@
-### Mikifus custom ###
-
-#Kubuntu
-.directory
-
-### Found at http://stackoverflow.com/questions/16736856/what-should-be-in-my-gitignore-for-an-android-studio-project ###
-
-#built application files
-#*.apk
-#*.ap_
-
-# files for the dex VM
-*.dex
-
-# Java class files
-*.class
-
-# generated files
-bin/
-gen/
-
-# Local configuration file (sdk path, etc)
+*.iml
+.gradle
 /local.properties
-
-# Windows thumbnail db
-Thumbs.db
-
-# OSX files
-.DS_Store
-
-# Eclipse project files
-.classpath
-.project
-
-# Android Studio
-.idea
 /.idea/workspace.xml
 /.idea/libraries
-.gradle
+.DS_Store
 /build
+/captures
